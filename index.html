@@ -104,6 +104,7 @@
     .project-features li { font-size: 0.8rem; color: var(--muted); padding: 0.4rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.5rem; }
     .project-features li:last-child { border-bottom: none; }
     .project-features li::before { content: '→'; color: var(--accent); font-size: 0.7rem; flex-shrink: 0; }
+    .learning-badge { display: inline-block; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--border); padding: 0.2rem 0.55rem; border-radius: 2px; margin-bottom: 0.8rem; }
 
     #contact { border-top: 1px solid var(--border); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
@@ -129,7 +130,6 @@
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* TABLET */
     @media (max-width: 1024px) {
       section { padding: 80px 5%; }
       #hero { gap: 2.5rem; }
@@ -138,8 +138,6 @@
       .skills-groups { grid-template-columns: repeat(2,1fr); }
       .contact-grid { gap: 2.5rem; }
     }
-
-    /* MOBILE */
     @media (max-width: 768px) {
       section { padding: 70px 5%; }
       .nav-links { display: none; }
@@ -157,8 +155,6 @@
       .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     }
-
-    /* SMALL PHONES */
     @media (max-width: 480px) {
       section { padding: 60px 4%; }
       .hero-image-wrap img, .hero-image-wrap::before { width: 160px; height: 200px; }
@@ -207,7 +203,7 @@
     </div>
     <div class="hero-image-wrap">
       <img src="Ashish.jpeg" alt="Ashish Kumar Shukla"
-        onerror="this.parentElement.innerHTML='<div class=\'hero-image-placeholder\'>AK</div>'">
+        onerror="this.parentElement.innerHTML='<div class=\'hero-image-placeholder\'>AKS</div>'">
     </div>
   </section>
 
@@ -273,6 +269,8 @@
     <div class="section-label">Projects</div>
     <h2 class="section-title">Things I've<br>built.</h2>
     <div class="projects-grid reveal">
+
+      <!-- 01 Adusa — Featured -->
       <div class="project-card featured">
         <div>
           <div class="project-number">01</div>
@@ -287,23 +285,35 @@
           <li>Full CRUD API — register, login, update, delete</li>
           <li>Protected routes with middleware chain</li>
           <li>React frontend with hooks — useState, useEffect</li>
-          <li>Planned: Socket.io real-time chat, Cloudinary</li>
+          <li>Planned: Socket.io / Pusher chat, Cloudinary</li>
         </ul>
       </div>
+
+      <!-- 02 GitHub Profile Viewer -->
       <div class="project-card">
         <div class="project-number">02</div>
-        <h3 class="project-name">Employee Management System</h3>
-        <p class="project-desc">Java-based desktop application for enterprise employee tracking. Admin-only access with full CRUD — add, view, update, delete, and search employee records.</p>
-        <div class="project-tech"><span class="tech-tag">Java</span><span class="tech-tag">OOPs</span></div>
-        <div class="project-status"><span class="status-dot"></span> Completed</div>
+        <h3 class="project-name">GitHub Profile Viewer</h3>
+        <p class="project-desc">Fetches live GitHub user data via the GitHub REST API using XMLHttpRequest. Displays avatar, name and followers dynamically with DOM manipulation. Includes input validation and error handling.</p>
+        <div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">XHR</span><span class="tech-tag">DOM</span><span class="tech-tag">GitHub API</span></div>
+        <div class="project-status">
+          <span class="status-dot"></span> Completed &nbsp;·&nbsp;
+          <a href="https://ashish8112.github.io/github-profile-viewer/" target="_blank" style="color: var(--accent); font-size: 0.72rem;">Live ↗</a>
+        </div>
       </div>
+
+      <!-- 03 Tribute Webpage -->
       <div class="project-card">
         <div class="project-number">03</div>
-        <h3 class="project-name">GitHub Profile Viewer</h3>
-        <p class="project-desc">Dynamic web page fetching live GitHub user data via the GitHub REST API. Built with vanilla JavaScript and DOM manipulation — no frameworks.</p>
-        <div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">Fetch API</span><span class="tech-tag">DOM</span></div>
-        <div class="project-status"><span class="status-dot"></span> Completed</div>
+        <div class="learning-badge">First Project</div>
+        <h3 class="project-name">APJ Abdul Kalam Tribute</h3>
+        <p class="project-desc">My first project — a tribute webpage built while learning HTML &amp; CSS from scratch. Responsive layout with hamburger navbar, Font Awesome icons, flexbox, and hover animations.</p>
+        <div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
+        <div class="project-status">
+          <span class="status-dot"></span> Completed &nbsp;·&nbsp;
+          <a href="https://ashish8112.github.io/ashish-portfolio/tribute-webpage/" target="_blank" style="color: var(--accent); font-size: 0.72rem;">Live ↗</a>
+        </div>
       </div>
+
     </div>
   </section>
 
