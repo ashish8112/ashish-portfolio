@@ -3,7 +3,7 @@
 Personal portfolio website built with HTML, CSS & JavaScript.
 
 ## Live Demo
-[View Live](https://ashish8112.github.io/ashish-portfolio/)
+[View Live](https://ashish8112.github.io/ashish-portfolio/) 
 
 ## About
 MCA student at Kristu Jayanti University, Bengaluru.
