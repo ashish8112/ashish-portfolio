@@ -24,5 +24,5 @@ HTML | CSS | JavaScript
 ## Connect
 - GitHub: https://github.com/ashish8112
 - LinkedIn: https://www.linkedin.com/in/ashish-shukla81/
-- LeetCode: https://leetcode.com/ashish_shukla81
+- LeetCode: https://leetcode.com/ashish-shukla81/
 - Email: ashishkrshukla.dev@gmail.com
