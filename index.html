@@ -197,10 +197,10 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
     <h2 class="sec-head">Work</h2>
 
     <article class="entry">
-      <div class="year">2026<br>ongoing</div>
+      <div class="year">Jun 2026<br>ongoing</div>
       <div>
         <h3>Adusa</h3>
-        <div class="where">A networking platform for college students. My own project.</div>
+        <div class="where">A networking platform for college students. My own project, five months and 216 commits.</div>
         <ul>
           <li>The feed was firing 51 API requests where one was enough. I moved the liked state onto the server response and removed the <b>N+1</b> query.</li>
           <li>Likes update before the server answers, with a snapshot of the previous state and a rollback if the request fails.</li>
@@ -219,7 +219,7 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
       <div class="year">2026</div>
       <div>
         <h3>Real time chat</h3>
-        <div class="where">Built during my internship at Main Flow Services and Technologies.</div>
+        <div class="where">Built during Main Flow Services' MERN training program.</div>
         <ul>
           <li>One to one messaging over Socket.io, with the token checked during the handshake so an unauthenticated client never opens a socket.</li>
           <li>Messages persisted in MongoDB, presence tracked on connect and disconnect.</li>
@@ -236,7 +236,7 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
       <div class="year">2026</div>
       <div>
         <h3>Blog platform</h3>
-        <div class="where">The first thing I ever put on the internet. Same internship, a month earlier.</div>
+        <div class="where">The first thing I ever put on the internet. Same training program, a month earlier.</div>
         <ul>
           <li>Register, write, like, comment and manage your own posts. A full CRUD API with JWT auth.</li>
           <li>Only the author can edit or delete a post. That check sits in middleware, because hiding the button is not what protects a route.</li>
@@ -250,17 +250,6 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
       </div>
     </article>
 
-    <article class="entry">
-      <div class="year">May 2026<br>Jun 2026</div>
-      <div>
-        <h3>MERN stack developer intern</h3>
-        <div class="where">Main Flow Services and Technologies, remote</div>
-        <ul>
-          <li>Wrote and shipped both applications on my own, against weekly deadlines.</li>
-          <li>Put both on Vercel and Render with MongoDB Atlas. Most of that time went on what only breaks once a thing is live: CORS origins and environment variables.</li>
-        </ul>
-      </div>
-    </article>
   </section>
 
   <!-- EDUCATION -->
