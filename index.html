@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ashish Kumar Shukla, full stack developer</title>
-<meta name="description" content="Full stack developer and MCA student in Bengaluru. Building Adusa, a networking platform for college students.">
+<meta name="description" content="Full stack developer and MCA student in Bengaluru. Three MERN applications deployed. Adusa is a networking platform for college students.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@ a:focus-visible{ outline:2px solid var(--sky); outline-offset:3px; border-radius
 .portrait{ position:relative; }
 .portrait img{
   width:100%; aspect-ratio:5/6; object-fit:cover; display:block;
-  border-radius:2px; saturate:1;
+  border-radius:2px;
   filter:saturate(1.05) contrast(1.03) brightness(1.02);
 }
 .portrait::after{
@@ -84,7 +84,7 @@ a:focus-visible{ outline:2px solid var(--sky); outline-offset:3px; border-radius
 }
 @media(max-width:720px){
   .hero{ grid-template-columns:1fr; gap:var(--s4); padding-top:var(--s5); }
-  .portrait{ max-width:170px; order:-1; }
+  .portrait{ max-width:170px; }
   .lede{ max-width:100%; }
 }
 
@@ -172,12 +172,11 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
   <div class="hero" id="top">
     <div class="rise a">
       <h1>Ashish Kumar<span class="line2">Shukla</span></h1>
-      <p class="lede">I build web applications end to end, then keep a written record of why they are built that way.</p>
+      <p class="lede">Full stack developer in Bengaluru. Three applications live, and a written record of the decisions behind each one.</p>
       <p class="standfirst">
-        MCA student in Bengaluru with three applications deployed and running. Right now I am building
-        Adusa, a networking platform for college students, where the interesting work has been the part
-        that only shows up in production: an <code>N+1</code> query in the feed, likes that had to feel
-        instant on a slow connection, and pages that stay public without leaking anyone's email.
+        MCA, 2027 batch. The work I am proudest of is the unglamorous kind: a feed that was firing
+        <code>51</code> API calls per page until I found the <code>N+1</code> query behind it, and likes
+        that had to feel instant on a slow connection. Everything below is deployed and the code is public.
       </p>
     </div>
     <div class="portrait rise b">
@@ -187,10 +186,10 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
   </div>
 
   <div class="ledger">
-    <div><b>124</b><span>problems solved in Java</span></div>
+    <div><b>150+</b><span>problems solved in Java</span></div>
     <div><b>169</b><span>day practice streak</span></div>
-    <div><b>3</b><span>applications deployed</span></div>
-    <div><b>77%</b><span>BCA, gold medal</span></div>
+    <div><b>216</b><span>commits on Adusa</span></div>
+    <div><b>3</b><span>applications live</span></div>
   </div>
 
   <!-- WORK -->
@@ -205,8 +204,8 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
         <ul>
           <li>The feed was firing 51 API requests where one was enough. I moved the liked state onto the server response and removed the <b>N+1</b> query.</li>
           <li>Likes update before the server answers, with a snapshot of the previous state and a rollback if the request fails.</li>
-          <li>An <b>optionalAuth</b> middleware lets the feed and profiles stay public while still personalising for a logged in user.</li>
-          <li>A <b>DECISIONS.md</b> in the repo records the tradeoffs I chose and the ones I rejected, including how one user can flood a chronological feed.</li>
+          <li>An <b>optionalAuth</b> middleware lets the feed and profiles stay public while still returning the right state to a signed in user.</li>
+          <li>A <b>DECISIONS.md</b> in the repo records the tradeoffs I chose and the ones I rejected. One entry is a feed problem I have not fixed yet, and the aggregation that would fix it.</li>
         </ul>
         <div class="stack">React · Node · Express · MongoDB · Tailwind · JWT</div>
         <div class="go">
@@ -226,7 +225,10 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
           <li>Messages persisted in MongoDB, presence tracked on connect and disconnect.</li>
         </ul>
         <div class="stack">React · Socket.io · Node · MongoDB</div>
-        <div class="go"><a href="https://ashishchat.vercel.app" target="_blank" rel="noopener">Open the site</a></div>
+        <div class="go">
+          <a href="https://ashishchat.vercel.app" target="_blank" rel="noopener">Open the site</a>
+          <a href="https://github.com/ashish8112/chat-app-realtime" target="_blank" rel="noopener">Read the code</a>
+        </div>
       </div>
     </article>
 
@@ -234,13 +236,17 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
       <div class="year">2026</div>
       <div>
         <h3>Blog platform</h3>
-        <div class="where">Built during my internship at Main Flow Services and Technologies.</div>
+        <div class="where">The first thing I ever put on the internet. Same internship, a month earlier.</div>
         <ul>
-          <li>A full CRUD API where only the author can edit or delete a post, checked in middleware rather than hidden in the interface.</li>
+          <li>Register, write, like, comment and manage your own posts. A full CRUD API with JWT auth.</li>
+          <li>Only the author can edit or delete a post. That check sits in middleware, because hiding the button is not what protects a route.</li>
           <li>Threaded comments on every post.</li>
         </ul>
         <div class="stack">React · Express · MongoDB · JWT</div>
-        <div class="go"><a href="https://ashishblog.vercel.app" target="_blank" rel="noopener">Open the site</a></div>
+        <div class="go">
+          <a href="https://ashishblog.vercel.app" target="_blank" rel="noopener">Open the site</a>
+          <a href="https://github.com/ashish8112/mern-blog-platform" target="_blank" rel="noopener">Read the code</a>
+        </div>
       </div>
     </article>
 
@@ -250,8 +256,8 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
         <h3>MERN stack developer intern</h3>
         <div class="where">Main Flow Services and Technologies, remote</div>
         <ul>
-          <li>Built and shipped both applications above on my own, against weekly milestones.</li>
-          <li>Owned deployment across Vercel, Render and MongoDB Atlas, including the parts that break in production: CORS, environment variables, build output.</li>
+          <li>Wrote and shipped both applications on my own, against weekly deadlines.</li>
+          <li>Put both on Vercel and Render with MongoDB Atlas. Most of that time went on what only breaks once a thing is live: CORS origins and environment variables.</li>
         </ul>
       </div>
     </article>
@@ -265,7 +271,7 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
       <div class="year">2025<br>2027</div>
       <div>
         <h3>Master of Computer Applications</h3>
-        <div class="where">Kristu Jayanti University, Bengaluru</div>
+        <div class="where">Kristu Jayanti University, Bengaluru. 84.77 percent aggregate.</div>
       </div>
     </article>
 
@@ -277,21 +283,6 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
       </div>
     </article>
 
-    <article class="entry">
-      <div class="year">2021</div>
-      <div>
-        <h3>Class XII, CBSE</h3>
-        <div class="where">TINSES, Varanasi.</div>
-      </div>
-    </article>
-
-    <article class="entry">
-      <div class="year">2019</div>
-      <div>
-        <h3>Class X, CBSE</h3>
-        <div class="where">Bihar Public School, Buxar.</div>
-      </div>
-    </article>
   </section>
 
   <!-- SKILLS -->
@@ -308,14 +299,23 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
 
   <!-- BEYOND -->
   <section id="beyond">
-    <h2 class="sec-head">Away from the editor</h2>
+    <h2 class="sec-head">Competitions and events</h2>
+
+    <article class="entry">
+      <div class="year">Oct<br>2026</div>
+      <div>
+        <h3>2nd place, coding and debugging</h3>
+        <div class="where">Gateways 2026, national level inter-collegiate IT fest, CHRIST (Deemed to be University), Bangalore</div>
+        <p>Two rounds in a team of two. The second was DSA based, which is where the daily practice paid off.</p>
+      </div>
+    </article>
 
     <article class="entry">
       <div class="year">2026</div>
       <div>
         <h3>Event head, Blackout Build</h3>
         <div class="where">Manoeuvre IT Fest, Kristu Jayanti University</div>
-        <p>Ran a team coding event for 70+ students from MCA, MSc Data Science and MSc Cybersecurity. The format was mine.</p>
+        <p>Ran a team coding event for 70+ students with two co-heads. The format was mine. One round had teams rebuilding working programs from shuffled paper strips.</p>
       </div>
     </article>
 
@@ -340,7 +340,7 @@ footer{ padding:var(--s5) 0; font-size:13.5px; color:var(--ink-soft); }
   <!-- CONTACT -->
   <section id="contact">
     <h2 class="sec-head">Get in touch</h2>
-    <p class="contact-intro">I am looking for a full time software development role where I can own features end to end. Email reaches me fastest.</p>
+    <p class="contact-intro">I am looking for a full time software development role where I write code every day. Email reaches me fastest.</p>
     <div class="reach">
       <a href="mailto:ashishkrshukla.dev@gmail.com">ashishkrshukla.dev@gmail.com <em>Email</em></a>
       <a href="https://github.com/ashish8112" target="_blank" rel="noopener">github.com/ashish8112 <em>Code</em></a>
